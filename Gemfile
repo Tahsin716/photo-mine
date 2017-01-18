@@ -29,6 +29,8 @@ gem 'simple_form', '~> 3.2', '>= 3.2.1'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 
+gem 'devise', '~> 4.2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
