@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
-	before_action :find_picture, only: [:show, :edit, :update, :destroy]
+	before_action :find_picture, only: [:show, :edit, :update, :destroy, :upvote]
+	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
 		@pictures = Picture.all.order("created_at DESC")
@@ -34,6 +35,11 @@ class PicturesController < ApplicationController
 	def destroy
 		@picture.destroy
 		redirect_to root_path		
+	end
+
+	def upvote
+		@picture.upvote_by current_user
+		redirect_to :back
 	end
 
 	private
