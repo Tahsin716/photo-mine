@@ -15,17 +15,18 @@
       <div class="panel-footer">
         <div class="row">
           <div class="col-md-6">
-            <p class="user"></p>
-            <%= @picture.user.email %>
+            <p class="user">
+              by <%= @picture.user.email %>
+            </p>
           </div>
           <div class="col md-6">
             <div class="btn-group pull-right">
-              <%= link_to like_pic_path(@picture), method: :put, class: 'btn btn-default' do %>
+              <%= link_to like_picture_path(@picture), method: :put, class: 'btn btn-default' do %>
                 <span class="glyphicon glyphicon-thumbs-up"></span>
                 <%= @picture.get_upvotes.size %>
               <% end %>
               <% if user_signed_in? %>
-                <%= link_to 'Fix Pic', edit_pic_path, class: "btn btn-info" %>
+                <%= link_to 'Fix Pic', edit_picture_path, class: "btn btn-info" %>
                 <%= link_to 'Delete', picture_path, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
               <% end %>
             </div>
