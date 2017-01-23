@@ -42,6 +42,10 @@ class PicturesController < ApplicationController
 		redirect_to :back
 	end
 
+	def mypictures
+		@pictures = current_user.pictures.order("created_at DESC")
+	end
+
 	private
 
 		def picture_params

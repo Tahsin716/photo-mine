@@ -1,0 +1,12 @@
+<div class="col-md-12">
+  <div class="transitions-enabled" id="pics">
+    <% @pictures.each do |picture| %>
+      <div class="box panel panel-default">
+        <%= link_to (image_tag picture.image.url), picture %>
+        <h2>
+          <%= link_to picture.title, picture %>
+        </h2>
+      </div>
+    <% end %>
+  </div>
+</div>
