@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   end
 
   root "pictures#index"
+  get 'mypictures' => 'pictures#mypictures'
 
 end
